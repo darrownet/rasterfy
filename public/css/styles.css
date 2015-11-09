@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'raleway-extra-bold';
+  src: url("../fonts/raleway-extrabold-webfont.eot");
+  src: url("../fonts/raleway-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-extrabold-webfont.woff2") format("woff2"), url("../fonts/raleway-extrabold-webfont.woff") format("woff"), url("../fonts/raleway-extrabold-webfont.ttf") format("truetype"), url("../fonts/raleway-extrabold-webfont.svg#ralewayextrabold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'roboto-regular';
+  src: url("../fonts/roboto-regular-webfont.eot");
+  src: url("../fonts/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/roboto-regular-webfont.woff") format("woff"), url("../fonts/roboto-regular-webfont.ttf") format("truetype"), url("../fonts/roboto-regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  background-color: #3399ff; }
+
+#header {
+  background-color: #ffffff; }
+
+.logo {
+  position: reltive;
+  color: #3399ff;
+  font-family: 'raleway-extra-bold';
+  font-size: 3em;
+  padding: 100px 0 100px 100px;
+  letter-spacing: 4px; }
+
+.credits {
+  font-family: 'roboto-regular';
+  font-size: .2em;
+  letter-spacing: 1px;
+  margin-top: 10px; }
+  .credits a:active, .credits a:link, .credits a:visited {
+    color: #666666;
+    text-decoration: none; }
+  .credits a:hover {
+    opacity: .85; }
+
+.social {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  height: 35px; }
+  .social a {
+    display: block;
+    width: 100%;
+    height: 100%; }
+
+.twitter, .github {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-left: 20px; }
+
+.twitter {
+  background-image: url("../img/twitter-icon.svg");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.github {
+  background-image: url("../img/github-icon.svg");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+#content {
+  max-width: 1200px;
+  padding: 100px;
+  margin: 0 auto; }
+
+.copy {
+  font-family: 'raleway-extra-bold';
+  font-size: 2em;
+  line-height: 1.875em;
+  color: #ffffff; }
+  .copy p:first-child {
+    font-size: 1.5em; }
+  .copy p:last-child {
+    font-family: 'roboto-regular';
+    opacity: .85;
+    margin-top: 20px;
+    line-height: 1.25em; }
+
+.instructions, .form-caption {
+  width: 100%;
+  text-align: left;
+  font-family: 'roboto-regular';
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #ffffff;
+  padding: 0 50px 10px 0;
+  opacity: .85;
+  border-top: 1px solid #ffffff;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-top: 50px; }
+
+.form-caption {
+  margin-top: 40px;
+  border-top: 0;
+  padding-top: 0;
+  margin-bottom: 0; }
+  .form-caption strong {
+    font-family: 'raleway-extra-bold'; }
+
+form.dropzone {
+  min-height: 300px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.2); }
+  form.dropzone .dz-message {
+    margin-top: 120px;
+    font-family: 'roboto-regular';
+    font-size: 1.5em;
+    color: #ffffff; }
+
+@media only screen and (max-width: 770px) {
+  .logo {
+    padding: 50px 0 50px 50px; }
+
+  .social {
+    top: 50px;
+    right: 50px; }
+
+  #content {
+    padding: 50px; } }
+@media only screen and (max-width: 480px) {
+  #header {
+    position: relative; }
+
+  .logo {
+    padding: 20px 0 80px 20px;
+    position: static; }
+
+  .social {
+    top: 100px;
+    left: 0; }
+
+  #content {
+    padding: 20px; }
+
+  .copy p:first-child {
+    font-size: 1.4em;
+    text-align: center; }
+  .copy p:last-child {
+    text-align: center; }
+
+  .instructions, .form-caption {
+    text-align: center;
+    padding-right: 0; }
+
+  .dz-message span {
+    font-size: 1.3em !important; } }

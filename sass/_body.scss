@@ -1,0 +1,58 @@
+#content{
+  max-width: 1200px;
+  padding: 100px;
+  margin: 0 auto;
+}
+
+.copy{
+  font-family: 'raleway-extra-bold';
+  font-size: 2em;
+  line-height: 1.875em;
+  color: #ffffff;
+  p:first-child{
+    font-size: 1.5em;
+  }
+  p:last-child{
+    font-family: 'roboto-regular';
+    opacity: .85;
+    margin-top: 20px;
+    line-height: 1.25em;
+  }
+}
+
+.instructions, .form-caption{
+  width: 100%;
+  text-align: left;
+  font-family: 'roboto-regular';
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #ffffff;
+  padding: 0 50px 10px 0;
+  opacity: .85;
+  border-top: 1px solid #ffffff;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-top: 50px;
+}
+
+.form-caption{
+  margin-top: 40px;
+  border-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  strong{
+    font-family: 'raleway-extra-bold';
+  }
+}
+
+form.dropzone{
+  min-height: 300px;
+  border: 0;
+  background: rgba(255, 255, 255, .2);
+  .dz-message{
+    margin-top: 120px;
+    font-family: 'roboto-regular';
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+}

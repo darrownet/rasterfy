@@ -1,0 +1,12 @@
+.DS_Store
+htmlimgfuckyeah.sublime-project
+htmlimgfuckyeah.sublime-workspace
+config.codekit
+
+npm-debug.log
+sass/.sass-cache/*
+
+node_modules/*
+public/.DS_Store
+public/uploads/*
+public/downloads/*

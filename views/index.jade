@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  section
+    #header
+      .logo RASTERFY
+        .credits
+            | brought to you by <a href="http://twitter.com/darrownet" target="_blank">@darrownet</a> and <a href="http://twitter.com/KyleONeill88" target="_blank">@KyleONeill88</a>.
+        .social
+          .twitter
+            a(href="http://twitter.com/rasterfy", target="_blank")
+          .github
+            a(href="https://github.com/darrownet/htmlimgfuckyeah", target="_blank")
+    #content
+      .copy
+        p Take your glorious image and covert it into an HTML file.
+        p Yes, thats right, we know - you’ve been waiting for this for a long time.
+      .instructions
+        p Drag your image into this here box and we’ll magically make it an HTML file!
+
+      form(action="/alright", id="imgdrop" class="dropzone" method="post", enctype="multipart/form-data")
+        .dz-message(data-dz-message) Drop files here to upload (no .gif files yo)
+      .form-caption
+        p Just be careful the resulting file is kind of... <strong>big.</strong>
