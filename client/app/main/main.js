@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rasterfyMongoApp')
+angular.module('rasterfyApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {

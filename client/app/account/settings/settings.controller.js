@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rasterfyMongoApp')
+angular.module('rasterfyApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rasterfyMongoApp')
+angular.module('rasterfyApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
     // $scope.awesomeThings = [];
     //

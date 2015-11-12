@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('rasterfyMongoApp')
+angular.module('rasterfyApp')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

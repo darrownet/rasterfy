@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rasterfyMongoApp')
+angular.module('rasterfyApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

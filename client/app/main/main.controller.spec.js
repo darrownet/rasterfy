@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('rasterfyMongoApp'));
+  beforeEach(module('rasterfyApp'));
   beforeEach(module('socketMock'));
 
   var MainCtrl,
