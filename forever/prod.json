@@ -1,6 +1,0 @@
-{
-    "uid": "app",
-    "watch": true,
-    "script": "./",
-    "command": "npm start"
-}
