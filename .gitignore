@@ -3,10 +3,15 @@ htmlimgfuckyeah.sublime-project
 htmlimgfuckyeah.sublime-workspace
 config.codekit
 
+node_modules
+public
+.tmp
+.sass-cache
+.idea
+client/bower_components
+dist
+/server/config/local.env.js
 npm-debug.log
-sass/.sass-cache/*
-
-node_modules/*
-public/.DS_Store
 public/uploads/*
 public/downloads/*
+public/.DS_Store

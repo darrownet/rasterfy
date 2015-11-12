@@ -1,0 +1,57 @@
+#header{
+  background-color: #ffffff;
+}
+
+.logo{
+  position: reltive;
+  color: $main-color;
+  font-family: 'raleway-extra-bold';
+  font-size: 3em;
+  padding: 100px 0 100px 100px;
+  letter-spacing: 4px;
+}
+
+.credits{
+  font-family: 'roboto-regular';
+  font-size: .2em;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  a:active, a:link, a:visited{
+    color: $link-color;
+    text-decoration: none;
+  }
+  a:hover{
+    opacity: .85;
+  }
+}
+
+.social{
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  height: 35px;
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.twitter, .github{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-left: 20px;
+}
+
+.twitter{
+  background-image: url('../img/twitter-icon.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.github{
+  background-image: url('../img/github-icon.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
