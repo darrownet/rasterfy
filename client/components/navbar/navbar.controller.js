@@ -2,9 +2,14 @@
 
 angular.module('rasterfyMongoApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
+    $scope.menu = [
+    {
       'title': 'Home',
       'link': '/'
+    },
+    {
+      'title': 'Togglr',
+      'link': '/togglr'
     }];
 
     $scope.isCollapsed = true;
