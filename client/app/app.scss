@@ -1,13 +1,20 @@
-$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-$fa-font-path: "/bower_components/font-awesome/fonts";
-$main-color: blue;
+
+
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'font-awesome/scss/font-awesome';
+// @import 'font-awesome/scss/font-awesome';
 
-/**
- * App-wide Styles
- */
+/** **/
+/* App-wide */
+@import '../core_sass/_var';
+@import '../core_sass/_typography';
+@import '../core_sass/_body';
+@import '../core_sass/_head';
+@import '../core_sass/_base ';
+@import '../core_sass/_reset';
+@import '../core_sass/_breakpoints';
+
+/** **/
 
 .browsehappy {
     margin: 0.2em 0;
@@ -20,13 +27,6 @@ $main-color: blue;
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
-@import 'main/css/_base.scss';
-@import 'main/css/_body.scss';
-@import 'main/css/_breakpoints.scss';
-@import 'main/css/_head.scss';
-@import 'main/css/_reset.scss';
-@import 'main/css/_typography.scss';
-@import 'main/css/_var.scss';
 @import 'main/main.scss';
 @import 'modal/modal.scss';
 // endinjector
