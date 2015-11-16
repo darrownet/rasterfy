@@ -3,7 +3,7 @@ $(function() {
   var myDropzone = $("#imgdrop").dropzone({
       acceptedFiles:'image/*',
       url:'/api/togglr',
-      maxFiles, 2,
+      maxFiles: 2,
       success: onSuccess
   });
   function onSuccess(file, obj) {
