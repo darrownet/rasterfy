@@ -18,9 +18,8 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/toggle/toggle.socket').register(socket);
+  require('../api/togglr/togglr.socket').register(socket);
   require('../api/stream/stream.socket').register(socket);
-  require('../api/thing/thing.socket').register(socket);
 }
 
 module.exports = function (socketio) {

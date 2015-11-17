@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rasterfyMongoApp')
+angular.module('rasterfyApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
     {

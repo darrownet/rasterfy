@@ -4,16 +4,11 @@ $(function() {
       acceptedFiles:'image/*',
       url:'/api/togglr',
       maxFiles: 2,
-      success: onSuccess
+      success: onSuccess,
+      withCredentials: true
   });
   function onSuccess(file, obj) {
-      console.log()
-      var iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-      iframe.src = window.location.origin + '/api/stream/' + obj.fileName + '?originalName=' + obj.originalName;
-      setTimeout(function(){
-          $(iframe).remove();
-      },10000);
+    console.log(file);
+    console.log(obj);
   }
 });

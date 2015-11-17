@@ -4,21 +4,21 @@
 
 'use strict';
 
-var Toggle = require('./toggle.model');
+var Togglr = require('./togglr.model');
 
 exports.register = function(socket) {
-  Toggle.schema.post('save', function (doc) {
+  Togglr.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  Toggle.schema.post('remove', function (doc) {
+  Togglr.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('toggle:save', doc);
+  socket.emit('togglr:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('toggle:remove', doc);
+  socket.emit('togglr:remove', doc);
 }

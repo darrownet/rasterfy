@@ -3,7 +3,7 @@
 describe('Controller: TogglrCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('rasterfyMongoApp'));
+  beforeEach(module('rasterfyApp'));
 
   var TogglrCtrl, scope;
 
