@@ -1,13 +1,16 @@
 'use strict';
 
-angular.module('rasterfyApp')
-  .controller('NavbarCtrl', function($scope, $location, Auth) {
+angular.module('rasterfyMongoApp')
+  .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
-        {
-            'title': 'Home',
-            'link': '/'
-        }
-    ];
+    {
+      'title': 'Home',
+      'link': '/'
+    },
+    {
+      'title': 'Togglr',
+      'link': '/togglr'
+    }];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

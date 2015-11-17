@@ -1,0 +1,13 @@
+section
+  include ../includes/header.jade
+  #content
+    .copy
+      p Toggle it.
+      p Just a little bit.
+    .instructions
+      p Drag 2 (two) images into this here box and we’ll toggle 'em fer ya!
+
+    form(id="imgdrop" class="dropzone" method="post", enctype="multipart/form-data")
+      .dz-message(data-dz-message) Drop files here to upload (no .gif files yo)
+        
+script(type="text/javascript", src="app/togglr/js/togglr.js")
