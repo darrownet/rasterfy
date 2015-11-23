@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/rasterfymongo-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };
