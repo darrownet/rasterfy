@@ -12,7 +12,7 @@ var router = express.Router();
 router.get('/', controller.index);
 router.get('/:id', controller.show);
 // router.post('/', [auth.isAuthenticated(), upload.array('file', 2)], controller.create);
-router.post('/', [upload.array('file', 2)], controller.create);
+router.post('/', [upload.fields([{name: 'file[0]'},{name: 'file[1]'}])], controller.create);
 router.put('/:id', controller.update);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.destroy);
