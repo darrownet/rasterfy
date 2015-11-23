@@ -18,7 +18,12 @@ exports.show = function(req, res) {
   Togglr.findById(req.params.id, function (err, togglr) {
     if(err) { return handleError(res, err); }
     if(!togglr) { return res.status(404).send('Not Found'); }
-    return res.json(togglr);
+    var togglrJson = togglr.toObject();
+    _.forEach(togglr.images, function(i, x){
+      togglrJson.images[x].image = i.data.toString('base64');
+      delete togglrJson.images[x].data;
+    });
+    return res.json(togglrJson);
   });
 };
 
@@ -27,7 +32,6 @@ exports.create = function(req, res) {
   // return res.status(200).json(req.files)
   var togglr = _.merge(new Togglr(), req.body),
       files = [req.files['file[0]'][0],req.files['file[1]'][0]];
-  console.log(files)
   togglr.images = [];
   // togglr.user = req.user._id;
   _.forEach(files, function(f){
