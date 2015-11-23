@@ -33,7 +33,7 @@ exports.create = function(req, res) {
   var togglr = _.merge(new Togglr(), req.body),
       files = [req.files['file[0]'][0],req.files['file[1]'][0]];
   togglr.images = [];
-  // togglr.user = req.user._id;
+  togglr.user = req.user._id;
   _.forEach(files, function(f){
     Jimp.read(f.path, function (err, image) {
       var i = {};
