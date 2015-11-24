@@ -4,9 +4,16 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var LikeSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  togglr: {
+    type: Schema.Types.ObjectId,
+    ref: 'Togglr',
+    required: true
+  }
 });
 
 module.exports = mongoose.model('Like', LikeSchema);

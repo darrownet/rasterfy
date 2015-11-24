@@ -7,7 +7,7 @@ var Jimp = require('Jimp');
 
 // Get list of togglrs
 exports.index = function(req, res) {
-  Togglr.find(function (err, togglrs) {
+  Togglr.find().select('-images').exec(function (err, togglrs) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(togglrs);
   });
