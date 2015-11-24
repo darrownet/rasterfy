@@ -3,11 +3,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
-var authTypes = ['github', 'twitter', 'facebook', 'google'];
+var authTypes = ['twitter', 'facebook'];
 
 var UserSchema = new Schema({
-  name: String,
-  email: { type: String, lowercase: true },
+  userName: {type: String, required: true, index: {unique: true}},
+  name: {
+    first: {type: String, required: true},
+    last: {type: String, required: true}
+  },
+  email: { type: String, lowercase: true, index: {unique: true}},
   role: {
     type: String,
     default: 'user'
@@ -17,8 +21,8 @@ var UserSchema = new Schema({
   salt: String,
   facebook: {},
   twitter: {},
-  google: {},
-  github: {}
+  active: {type: Boolean, default: true},
+  added: { type: Date, default: Date.now }
 });
 
 /**
@@ -41,7 +45,10 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'links': {
+        'togglrs':'/api/togglr/users/' + this._id
+      }
     };
   });
 
@@ -89,6 +96,27 @@ UserSchema
       respond(true);
     });
 }, 'The specified email address is already in use.');
+
+UserSchema
+  .path('userName')
+  .validate(function(value, respond) {
+    var self = this;
+    this.constructor.findOne({userName: value}, function(err, user) {
+      if(err) throw err;
+      if(user) {
+        if(self.id === user.id) return respond(true);
+        return respond(false);
+      }
+      respond(true);
+    });
+}, 'The specified username is already in use.');
+
+UserSchema
+  .path('userName')
+  .validate(function(value, respond) {
+    var inValid = /\s/;
+    respond(!inValid.test(value));
+}, 'A username must be one word.');
 
 var validatePresenceOf = function(value) {
   return value && value.length;

@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/like/like.socket').register(socket);
   require('../api/togglr/togglr.socket').register(socket);
   require('../api/stream/stream.socket').register(socket);
 }

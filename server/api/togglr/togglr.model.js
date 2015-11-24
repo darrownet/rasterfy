@@ -4,11 +4,15 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var TogglrSchema = new Schema({
-  name: String,
-  info: String,
+  caption: {
+    type: String,
+    maxlength: 140,
+    required: true
+  },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
   images: [
     {
@@ -16,7 +20,8 @@ var TogglrSchema = new Schema({
       contentType: String
     }
   ],
-  active: Boolean
+  active: {type: Boolean, default: true},
+  added: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Togglr', TogglrSchema);

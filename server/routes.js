@@ -10,6 +10,7 @@ var path = require('path');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/likes', require('./api/like'));
   app.use('/api/togglr', require('./api/togglr'));
   app.use('/api/stream', require('./api/stream'));
   app.use('/api/users', require('./api/user'));

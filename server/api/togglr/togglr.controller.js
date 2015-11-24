@@ -34,11 +34,15 @@ exports.create = function(req, res) {
       files = [req.files['file[0]'][0],req.files['file[1]'][0]];
   togglr.images = [];
   togglr.user = req.user._id;
+
+  // REMOVE THIS LATER!!!!!!
+  togglr.caption = 'test';
+
   _.forEach(files, function(f){
     Jimp.read(f.path, function (err, image) {
       var i = {};
       i.contentType = f.mimetype;
-      image.resize(256,256)
+      image.resize(420,420)
         .getBuffer(i.contentType, function(error, buffer){
           i.data = buffer;
           togglr.images.push(i);
@@ -78,6 +82,33 @@ exports.destroy = function(req, res) {
     });
   });
 };
+
+// Get list of togglrs separated by user
+exports.byUsers = function(req, res) {
+  Togglr.aggregate(
+    [
+      {$group: { _id: "$user", totals: { $sum: 1 }}}
+      // {$match: { totalPop: { $gte: 10*1000*1000 }}}
+    ])
+    .exec(function (err, togglrs) {
+      if(err) { return handleError(res, err); }
+      return res.status(200).json(togglrs);
+    });
+};
+
+
+// Get list of togglrs for single user
+exports.byUser = function(req, res) {
+  Togglr.find({'user':req.params.id})
+    .select('_id title description added')
+    .limit(10)
+    .sort({added: 1})
+    .exec(function (err, togglrs) {
+      if(err) { return handleError(res, err); }
+      return res.status(200).json(togglrs);
+    });
+};
+
 
 function handleError(res, err) {
   return res.status(500).send(err);
